@@ -11,35 +11,18 @@ class Ship
   def initialize(x, y)
     @x = x
     @y = y
-    @missile_coordinates = []
   end
 
-  def move_left
-    @x -= 5
+  def move(distance)
+    @x += distance
   end
 
-  def move_right
-    @x += 5
-  end
-
-  def fire
-    @missile_coordinates << [@x, @y - HEIGHT / 2]
-  end
-
-  def move_missiles
-    @missile_coordinates.each do |missile|
-      missile[1] -= 10
-    end
+  def ship_nose
+    [@x, @y - HEIGHT / 2]
   end
 
   def draw
     # Ignore this
-  end
-
-  def draw_missiles
-    @missile_coordinates.each do |missile|
-
-    end
   end
 
 end
@@ -49,8 +32,20 @@ end
 Reflecting on Principle
 -----------------------
 1. What does the OOD promise to give us, as programmers?
+
 2. What does Martin's SOLID acronym stand for? (Just expand the acronym.)
+  
+  Single responsibility principle
+  Liskov substitution principle
+  
 3. True or False: It is our professional responsibility to always spend time designing before writing our code (designing now rather than later).
+
+  It's important to spend some time designing but it's not possible to account for all or most future requirements. Writing code and iterating is a necessary part of the design process.
+
 4. In Metz' TRUE acronym, what does the E stand for and what does it mean?
+
+  Exemplary: well designed code should naturally encourages changes to the code to also follow good design.
+
 5. How does applying SRP naturally lead to good design?
+
 =end
