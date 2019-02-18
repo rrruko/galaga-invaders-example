@@ -2,9 +2,10 @@ class Missile
 
   attr_accessor :x, :y, :velocity
 
-  def initialize(x, y)
-    @x = x
-    @y = y
+  def initialize(position, velocity)
+    @x = position.x
+    @y = position.y
+    @velocity = velocity
   end
 
   def launch(velocity)

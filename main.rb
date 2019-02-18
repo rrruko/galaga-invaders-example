@@ -40,10 +40,10 @@ class GalagaInvaders
     elsif key == 'd'
       ship.move_right
     elsif key == ' '
-      ship.fire(missiles)
+      missiles.launch_for(ship)
     end
     if key == 'p'
-      alien.fire(missiles)
+      missiles.launch_for(alien)
     end
   end
 
@@ -55,8 +55,19 @@ GalagaInvaders.new.show
 Reflecting on Principle
 -----------------------
 1. True or False: Good OO design eliminates dependencies.
+    It's not possible to eliminate all dependencies because objects need to collaborate. However, reducing the quantity of dependencies makes it easier for objects to act as decoupled components.
+
 2. Briefly list four ways in which a class that collaborates with another class
    is dependent on it. (For example, one dependency is knowing the other class name.)
+    - Knowing the name of a class,
+    - knowing a method of the class,
+    - knowing the parameters of a method, and
+    - knowing the order of those parameters.
+
 3. What are two primary factors to consider when assessing the risk of a dependency?
+    The probability that a component will change, and the number of things dependent on it.
+
 4. What is Metz's rule of thumb for choosing a dependency direction?
+    Depend on things less likely to change than you.
+
 =end
