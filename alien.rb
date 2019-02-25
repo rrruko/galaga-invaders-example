@@ -26,6 +26,14 @@ class Alien
     location.y + half_height
   end
 
+  def fire_location
+    Vector.new(@location.x, bottom_edge)
+  end
+
+  def missile_velocity
+    10
+  end
+
   private
 
   def half_height
