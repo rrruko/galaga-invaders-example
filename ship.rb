@@ -1,12 +1,8 @@
-class Ship < Structure
+class Ship
+  include Entity
 
   def initialize(args)
-    super
-    @sprite = args.fetch[:sprite]
-  end
-
-  def draw
-    # Draws the `sprite` at `location`
+    initialize_entity(args)
   end
 
 end
